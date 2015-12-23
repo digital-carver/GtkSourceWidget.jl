@@ -12,7 +12,7 @@ GtkSourceWidget.jl requires that a GtkSourceView is installed and in the library
 
 ### Linux
 
-?
+On Ubuntu and its derivatives (eg. Linux Mint), install the '`libgtksourceview-3.0-1`: shared libraries for the GTK+ syntax highlighting widget' package using Synaptic or `apt-get`.
 
 ### OSX
 Use Julia's Homebrew to install the library:
