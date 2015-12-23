@@ -30,7 +30,9 @@ mutable(it::GtkTextIter) = Gtk.GLib.MutableTypes.mutable(it)
 if Gtk.gtk_version == 3
     if OS_NAME == :Windows
         const libgtksourceview = Pkg.dir() * "\\GtkSourceWidget\\bin\\libgtksourceview-3.0-1.dll"
-	else
+    elseif OS_NAME == :Linux
+        const libgtksourceview = strip(readall(pipeline(`ldconfig -p`, `grep libgtksourceview-3`, `cut -d'>' -f2`)))
+    else
         const libgtksourceview = Pkg.dir() * "/Homebrew/deps/usr/lib/libgtksourceview-3.0"
     end
 else
